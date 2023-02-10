@@ -30,6 +30,7 @@ public class UserProfileController {
 		userMap.put("3", new UserProfile("3", "홍길순", "111-1113", "서울시 강남구 대치3동"));
 	}
 	
+	// http://localhost:8000/
 	// Get = 조회 , Post = 생성 , Put = 수정 ,  Delete = 삭제
 	@GetMapping("/user/{id}")
 	public UserProfile getUserProfile(@PathVariable("id") String id) {
