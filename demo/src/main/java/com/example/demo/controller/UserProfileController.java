@@ -32,23 +32,24 @@ public class UserProfileController {
 	
 	// http://localhost:8000/
 	// Get = 조회 , Post = 생성 , Put = 수정 ,  Delete = 삭제
-	@GetMapping("/user/{id}")
+	
+	@GetMapping("/user/{id}") // 사용자 id를 기준으로 정보 조회
 	public UserProfile getUserProfile(@PathVariable("id") String id) {
 		return userMap.get(id);
 	}
 	
-	@GetMapping("/user/all")
+	@GetMapping("/user/all") // 전체 사용자 정보 조회
 	public List<UserProfile> getUserProfileList() {
 		return new ArrayList<UserProfile>(userMap.values());
 	}
 	
-	@PutMapping("/user/{id}")
+	@PutMapping("/user/{id}") // id를 기준으로 사용자 정보 생성
 	public void putUserProfile(@PathVariable("id") String id, @RequestParam("name") String name, @RequestParam("phone") String phone, @RequestParam("address") String address) {
 		UserProfile userProfile = new UserProfile(id, name, phone, address);
 		userMap.put(id, userProfile);
 	}
 	
-	@PostMapping("/user/{id}")
+	@PostMapping("/user/{id}") // id를 기준으로 사용자 정보 수정
 	public void postUserProfile(@PathVariable("id") String id, @RequestParam("name") String name, @RequestParam("phone") String phone, @RequestParam("address") String address) {
 		UserProfile userProfile = userMap.get(id);
 		userProfile.setName(name);
@@ -56,7 +57,7 @@ public class UserProfileController {
 		userProfile.setAddress(address);
 	}
 	
-	@DeleteMapping("/user/{id}")
+	@DeleteMapping("/user/{id}") // id를 기준으로 사용자 정보 삭제
 	public void deleteUserProfile(@PathVariable("id") String id) {
 		userMap.remove(id);
 	}
