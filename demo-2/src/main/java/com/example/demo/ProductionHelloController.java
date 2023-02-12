@@ -9,9 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@Profile("dev")
-public class HelloController {
-	
+@Profile("production")
+public class ProductionHelloController {
 	@Value("${hello.message}")
 	private String helloMessage;
 	
@@ -23,6 +22,7 @@ public class HelloController {
 
 	@GetMapping("/hello")
 	public String getHello() {
-		return "[HelloController]" + helloMessage + " " + countries + " " + accountMap.get("name") + " " + accountMap.get("password");
+		return "[ProductionHelloController]" + helloMessage + " " + countries + " " + accountMap.get("name") + " " + accountMap.get("password");
 	}
+
 }

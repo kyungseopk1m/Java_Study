@@ -1,0 +1,5 @@
+server.port: 800
+hello:
+   countries: 대한민국,중국,미국,일본
+   account: "{name: 'Tom', password: 'Tom1234'}"
+spring.profiles.active: production

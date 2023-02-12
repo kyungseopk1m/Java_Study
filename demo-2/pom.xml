@@ -27,6 +27,14 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- application-dev.properties 추가하려면 해당 코드 필요 -->
+		<dependency>
+		  <groupId>org.apache.maven.plugins</groupId>
+		  <artifactId>maven-resources-plugin</artifactId>
+		  <version>3.2.0</version>
+		  <type>maven-plugin</type>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -36,6 +44,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+			<defaultGoal>install</defaultGoal>
 	</build>
 
 </project>
