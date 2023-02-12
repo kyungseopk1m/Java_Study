@@ -37,6 +37,8 @@
 		</dependency>
 	</dependencies>
 
+	<!-- No goals have been specified for this build (Maven) 오류 해결 코드 -->
+	<!-- Maven 프로젝트는 빌드 옵션을 정해주어야지만 빌드가 가능 -->
 	<build>
 		<plugins>
 			<plugin>
