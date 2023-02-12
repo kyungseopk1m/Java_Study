@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.6.3</version>
+		<version>2.6.3</version> <!-- 버전 3.0.1에서 2.6.3으로 수정하였음(오류해결) -->
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
@@ -22,12 +22,29 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+	<!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc6 -->
+	<dependency>
+		<groupId>com.oracle.database.jdbc</groupId>
+		<artifactId>ojdbc6</artifactId>
+		<version>11.2.0.4</version>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter -->
+	<dependency>
+		<groupId>org.mybatis.spring.boot</groupId>
+		<artifactId>mybatis-spring-boot-starter</artifactId>
+		<version>2.3.0</version>
+	</dependency>
+	<!-- 3.0.1은 오류 발생하여 2.3.0으로 다운그레이드 -->
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	
+	
 
 	<build>
 		<plugins>
